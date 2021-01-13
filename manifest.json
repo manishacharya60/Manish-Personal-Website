@@ -1,0 +1,30 @@
+{
+  "short_name": "Manish",
+  "name": "Manish Acharya",
+  "icons": [
+    {
+      "src": "/images/icon72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/images/icon96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/images/icon192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon310.png",
+      "type": "image/png",
+      "sizes": "310x310"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#7f7fd5",
+  "display": "standalone",
+  "theme_color": "#7f7fd5"
+}

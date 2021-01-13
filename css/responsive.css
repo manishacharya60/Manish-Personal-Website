@@ -1,0 +1,288 @@
+@media (min-width: 200px) and (max-width: 1010px) {
+  .nav-bar {
+    background: #fff;
+    padding: 10px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+    color: #283593;
+  }
+
+  .menu ul {
+    margin-top: 0;
+  }
+
+  .menu ul li a {
+    padding: 12px;
+    color: #000;
+  }
+
+  .skill h2 {
+    margin-top: 30px;
+  }
+
+  .about {
+    padding: 30px;
+  }
+
+  .owl-carousel {
+    padding: 30px;
+  }
+
+  .contact-section {
+    padding: 30px;
+  }
+
+  .contact-section .c-box h5 {
+    font-size: 15px;
+  }
+
+  .contact-section .c-box p {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 850px) {
+  .nav-bar {
+    background: rgba(127, 127, 213);
+    padding: 10px 30px;
+  }
+
+  .logo h1 {
+    font-size: 17px;
+    color: #283593;
+  }
+
+  .menu ul {
+    margin-top: 0;
+  }
+
+  .menu ul li a {
+    padding: 8px;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .contact-section {
+    padding: 30px;
+  }
+
+  .c-box {
+    width: 48%;
+    box-shadow: 1px 1px 20px #b8b5ad;
+  }
+
+  .c-middle {
+    margin: 0;
+  }
+
+  .c-last {
+    float: left;
+  }
+
+  .c-box .fa {
+    font-size: 25px;
+  }
+
+  .contact-section .c-box h5 {
+    font-size: 18px;
+  }
+
+  .contact-section .c-box p {
+    font-size: 15px;
+  }
+
+  .counter-section {
+    padding: 30px 30px 0;
+  }
+
+  .form {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .testimonial {
+    padding: 30px;
+  }
+
+  .t-box p {
+    font-size: 18px;
+  }
+
+  .t-box h4 {
+    font-size: 20px;
+  }
+
+  .t-box h4 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 650px) {
+  .container1 h3 {
+    font-size: 30px;
+  }
+
+  .typing h2 {
+    font-size: 22px;
+  }
+
+  .nav-bar {
+    background: rgba(127, 127, 213);
+    padding: 10px 20px;
+    transition: 0.5s ease;
+  }
+
+  .logo h1 {
+    font-size: 25px;
+    color: #283593;
+    margin-top: 10px;
+  }
+
+  .about {
+    padding: 15px;
+  }
+
+  .menu {
+    float: right;
+  }
+
+  .menu ul {
+    margin-top: 0;
+  }
+
+  .menutoggle {
+    display: block;
+    float: right;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  .menutoggle:before {
+    content: "\f0c9";
+    font-family: "FontAwesome";
+    font-size: 35px;
+    color: #283593;
+    transition: 0.5s;
+  }
+
+  .menutoggle.nav-active:before {
+    content: "\f00d";
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.nav-active {
+    display: block;
+    width: 100%;
+  }
+
+  .menu.nav-active {
+    float: left;
+    padding: 0;
+    text-align: left;
+  }
+
+  .menu.nav-active ul {
+    display: block;
+  }
+
+  .menu.nav-active ul li {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    transition: 0.5s ease-in;
+  }
+
+  .menu.nav-active ul li a {
+    font-size: 18px;
+  }
+
+  .menu ul li a {
+    padding: 3px;
+    font-size: 13px;
+    color: #000;
+  }
+
+  .contact-section {
+    padding: 15px;
+  }
+
+  .c-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .c-box .fa {
+    font-size: 35px;
+  }
+
+  .contact-section .c-box h5 {
+    font-size: 20px;
+  }
+
+  .contact-section .c-box p {
+    font-size: 18px;
+  }
+
+  .send-message {
+    padding: 30px 15px;
+  }
+
+  .form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .introduction {
+    text-align: left;
+  }
+
+  .home-image {
+    width: 80%;
+  }
+
+  .home-text {
+    margin-top: 1.5em;
+    padding: 20px;
+  }
+
+  .home-text h2 {
+    text-align: center;
+    color: #e0e0e0;
+    font-weight: bold;
+  }
+
+  .home-text h3 {
+    text-align: center;
+  }
+
+  .portfolio-section {
+    padding: 20px;
+  }
+
+  .portfolio-box {
+    margin: 10px;
+  }
+
+  .portfolio-box h5 {
+    font-size: 2em;
+  }
+
+  .portfolio-box p {
+    font-size: 1.2em;
+  }
+
+  .portfolio-box .btn-primary {
+    font-size: 1.2em;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+}
