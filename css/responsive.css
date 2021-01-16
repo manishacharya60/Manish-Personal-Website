@@ -1,6 +1,5 @@
 @media (min-width: 200px) and (max-width: 1010px) {
   .nav-bar {
-    background: #fff;
     padding: 10px;
   }
 
@@ -10,12 +9,12 @@
   }
 
   .menu ul {
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   .menu ul li a {
     padding: 12px;
-    color: #000;
+    color: #fff;
   }
 
   .skill h2 {
@@ -55,13 +54,13 @@
   }
 
   .menu ul {
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   .menu ul li a {
     padding: 8px;
     font-size: 14px;
-    color: #000;
+    color: #fff;
   }
 
   .contact-section {
@@ -149,7 +148,7 @@
   }
 
   .menu ul {
-    margin-top: 0;
+    margin-top: 20px;
   }
 
   .menutoggle {
@@ -200,6 +199,7 @@
 
   .menu.nav-active ul li a {
     font-size: 18px;
+    color: #fff;
   }
 
   .menu ul li a {
