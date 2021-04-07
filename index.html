@@ -1,79 +1,89 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="theme-color" content="#283593">
-		<meta name="msapplication-navbutton-color" content="#283593">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<title>Manish Acharya</title>
+<!DOCTYPE html>
+<html>
 
-				    <!-- manifest -->
-					<link rel="manifest" href="./manifest.json" crossorigin="use-credentials" />
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#283593">
+	<meta name="msapplication-navbutton-color" content="#283593">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<title>Manish Acharya</title>
 
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="css/responsive.css">
-		
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-		<script type="text/javascript" src="js/custom.js"></script>
-		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script src="js/wow.min.js"></script>
-		<script>
-			new WOW().init();
-		</script>
+	<!-- manifest -->
+	<link rel="manifest" href="./manifest.json" crossorigin="use-credentials" />
 
-		<meta name="msapplication-TileColor" content="#7f7fd5">
-		<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
-		<meta name="theme-color" content="#7f7fd5">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive.css">
 
-		<script>
-			window.addEventListener("load", () => {
-			  getNews();
-			  registerSW();
-			});
-	  
-			async function getNews() {
-			  const res = await fetch(topHeadlinesUrl);
-			  const json = await res.json();
-	  
-			  const main = document.querySelector("main");
-	  
-			  json.articles.forEach((article) => {
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+
+	<meta name="msapplication-TileColor" content="#7f7fd5">
+	<meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+	<meta name="theme-color" content="#7f7fd5">
+
+	<script>
+		window.addEventListener("load", () => {
+			getNews();
+			registerSW();
+		});
+
+		async function getNews() {
+			const res = await fetch(topHeadlinesUrl);
+			const json = await res.json();
+
+			const main = document.querySelector("main");
+
+			json.articles.forEach((article) => {
 				const el = document.createElement("news-article");
 				el.article = article;
 				main.appendChild(el);
-			  });
-			}
-	  
-			async function registerSW() {
-			  if ("serviceWorker" in navigator) {
+			});
+		}
+
+		async function registerSW() {
+			if ("serviceWorker" in navigator) {
 				try {
-				  await navigator.serviceWorker.register("./sw.js");
+					await navigator.serviceWorker.register("./sw.js");
 				} catch (e) {
-				  console.log(`SW registration failed`);
+					console.log(`SW registration failed`);
 				}
-			  }
 			}
-		  </script>
+		}
+	</script>
 
-		<link rel="shortcut icon" href="images/title-logo.png">
-	</head>
-	<body>
+	<link rel="shortcut icon" href="images/title-logo.png">
+</head>
 
-		<a href="#" class="to-top"><i class="fa fa-rocket"></i></a>
+<body>
 
-		<div class="loader-wrapper">
-    <span class="loader"><span class="loader-inner"></span></span>
+	<a href="#" class="to-top"><i class="fa fa-rocket"></i></a>
+
+<div id="loader">
+	<div class="loader-wrapper">
+		<div class="loadingio-spinner-double-ring-ibzzkd7b66g"><div class="ldio-b6x15af0l2n">
+			<div></div>
+			<div></div>
+			<div><div></div></div>
+			<div><div></div></div>
+			</div></div>
+	</div>	
 </div>
-		<!-- background -->
-		
-		<div class="background">
-			<div id="particles-js">
+	<!-- background -->
+
+	<div class="background">
+		<div id="particles-js">
 			<!-- nav bar -->
 			<div id="home">
 				<div class="nav-bar">
@@ -85,12 +95,12 @@
 					<nav>
 						<div class="menu">
 							<ul>
-								<li><a  href="#home">Home</a></li>
-								<li><a  href="#about">About</a></li>
-								<li><a  href="#services">Services</a></li>
-								<li><a  href="#portfolio">Portfolio</a></li>
-								<li><a  href="#articles">Articles</a></li>
-								<li><a  href="#contact">Contact me</a></li>
+								<li><a href="#home">Home</a></li>
+								<li><a href="#about">About</a></li>
+								<li><a href="#services">Services</a></li>
+								<li><a href="#portfolio">Portfolio</a></li>
+								<li><a href="#articles">Articles</a></li>
+								<li><a href="#contact">Contact me</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -114,7 +124,7 @@
 							<div class="typing">
 								<h2>I am a <span class="text"></span></h2>
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
@@ -122,472 +132,499 @@
 		</div>
 	</div>
 	</div>
-</div>
-<!-- background ends -->
-
-<!-- about me -->
-<a name="about">
-	<div class="title wow fadeInDown data-wow-delay='0.4s'">
-		<span>About Me</span>
 	</div>
+	<!-- background ends -->
 
-	<div class="container-fluid container-about mt-4">
-		<div class="about">
-			<div class="row wow zoomIn">
-				<div class="col-sm-6 col-md-6 col-lg-4">
-					<div class="introduction">
-						<h1>Manish Acharya</h1>
-						<h4>FRONT END DEVELOPER</h4>
+	<!-- about me -->
+	<a name="about">
+		<div class="title wow fadeInDown data-wow-delay='0.4s'">
+			<span>About Me</span>
+		</div>
 
-						<p>My name is Manish Acharya and I am student of St. Xavier's College, Maitighar, Kathmandu. I am a high school student who is fighting for his dreams. I have keen interest in computer programming so I am busy with these stuffs, so far I have learned web-designing, and basic of web-development and other few programming langauge. My only aim is to master in JAVA. I love sci-fi books and movies. I even love writing articles. This is all about me.</p>
+		<div class="container-fluid container-about mt-4">
+			<div class="about">
+				<div class="row wow zoomIn">
+					<div class="col-sm-6 col-md-6 col-lg-4">
+						<div class="introduction">
+							<h1>Manish Acharya</h1>
+							<h4>FRONT END DEVELOPER</h4>
+
+							<p>My name is Manish Acharya, just a normal boy fighting for his dreams. Currently studying in St. Xavier's College; I am a proud Xavierian. Talking about my interest, I would like my career to revolve around computer programming. I have always loved to be in the world of programming and just explore it. I have learnt web-designing and development and few other other programming languages with all my enthusiasm. The main objective of my life has been to master in JAVA. I also love reading sci-fi books and watching movies. They have always interest me. Other than programming stuffs, I absolutely love writing articles, it brings me happiness. I have always been appriciated for it and I am grateful for all the appreciation I recieve. This is all about me! </p>
+						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-4 col-md-6 col-lg-4">
-					<div class="about-image">
-						<img src="images/profileimg.jpg">
+					<div class="col-sm-4 col-md-6 col-lg-4">
+						<div class="about-image">
+							<img src="images/profileimg.jpg">
+						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-12 col-md-12 col-lg-4">
-					<div class="skill">
-						<h2>My Skills</h2>
+					<div class="col-sm-12 col-md-12 col-lg-4">
+						<div class="skill">
+							<h2>My Skills</h2>
 
-						<h3>HTML</h3>
-						<div class="html"></div>
+							<h3>HTML</h3>
+							<div class="html"></div>
 
-						<h3>CSS</h3>
-						<div class="css"></div>
+							<h3>CSS</h3>
+							<div class="css"></div>
 
-						<h3>JAVASCRIPT</h3>
-						<div class="js"></div>
+							<h3>JAVASCRIPT</h3>
+							<div class="js"></div>
 
-						<h3>JAVA</h3>
-						<div class="java"></div>
+							<h3>JAVA</h3>
+							<div class="java"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</a>
-<!-- about me ends -->
+	</a>
+	<!-- about me ends -->
 
-<!-- services -->
-<a name="services">
-	<div class="title wow fadeInDown">
-		<span>What I Offer</span>
-	</div>
-
-	<div class="owl-one owl-carousel owl-theme mt-5">
-		<div class="item s-box">
-			<i class="fa fa-globe" align="center"></i>
-			<h3>Web Designing</h3>
-
-			<p>If you are searching for your website to be built then I can help you with it. I offer, developing a responsive and attractive websites at reasonable price.</p>
+	<!-- services -->
+	<a name="services">
+		<div class="title wow fadeInDown">
+			<span>What I Offer</span>
 		</div>
 
-		<div class="item s-box">
-			<i class="fa fa-viacoin" align="center"></i>
-			<h3>Logo Designing</h3>
+		<div class="owl-one owl-carousel owl-theme mt-5">
+			<div class="item s-box">
+				<i class="fa fa-globe" align="center"></i>
+				<h3>Web Designing</h3>
 
-			<p>If you want to be make a cool and attractive logo for your business or franchise then I can surely help you with it.</p>
+				<p>If you are searching for your website to be built then I can help you with it. I offer, developing a
+					responsive and attractive websites at reasonable price.</p>
+			</div>
+
+			<div class="item s-box">
+				<i class="fa fa-viacoin" align="center"></i>
+				<h3>Logo Designing</h3>
+
+				<p>If you want to be make a cool and attractive logo for your business or franchise then I can surely
+					help you with it.</p>
+			</div>
+
+			<div class="item s-box">
+				<i class="fa fa-google-wallet" align="center"></i>
+				<h3>Art Work</h3>
+
+				<p>I have passion of art as well. So if you want then I can make and gift you some arts according to
+					your choice.</p>
+			</div>
+
+			<div class="item s-box">
+				<i class="fa fa-pencil" align="center"></i>
+				<h3>Content Writing</h3>
+
+				<p>I can write content for your websites, magazines or newspaper. I prefer writing most content in
+					Nepali but I can help you with English as well.</p>
+			</div>
+
+			<div class="item s-box">
+				<i class="fa fa-graduation-cap" align="center"></i>
+				<h3>Tutor</h3>
+
+				<p>In my free time I can give you web designing course. Also I can give home tution to students from
+					grade 5-10.</p>
+			</div>
+		</div>
+	</a>
+	<!-- services ends -->
+
+	<!-- counter -->
+	<div class="counter-section">
+		<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
+			<i class="fa fa-clock-o"></i>
+			<h4><span class="count-num">786</span></h4>
+			<h5>Hours Worked</h5>
 		</div>
 
-		<div class="item s-box">
-			<i class="fa fa-google-wallet" align="center"></i>
-			<h3>Art Work</h3>
-
-			<p>I have passion of art as well. So if you want then I can make and gift you some arts according to your choice.</p>
+		<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
+			<i class="fa fa-code"></i>
+			<h4><span class="count-num">50126</span></h4>
+			<h5>Lines of Code</h5>
 		</div>
 
-		<div class="item s-box">
-			<i class="fa fa-pencil" align="center"></i>
-			<h3>Content Writing</h3>
-
-			<p>I can write content for your websites, magazines or newspaper. I prefer writing most content in Nepali but I can help you with English as well.</p>
+		<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
+			<i class="fa fa-user"></i>
+			<h4><span class="count-num">35</span></h4>
+			<h5>Happy Customer</h5>
 		</div>
 
-		<div class="item s-box">
-			<i class="fa fa-graduation-cap" align="center"></i>
-			<h3>Tutor</h3>
-
-			<p>In my free time I can give you web designing course. Also I can give home tution to students from grade 5-10.</p>
+		<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
+			<i class="fa fa-coffee"></i>
+			<h4><span class="count-num">667</span></h4>
+			<h5>Cups of Coffee</h5>
 		</div>
 	</div>
-</a>
-<!-- services ends -->
+	<!-- counter ends -->
 
-<!-- counter -->
-<div class="counter-section">
-	<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
-		<i class="fa fa-clock-o"></i>
-		<h4><span class="count-num">786</span></h4>
-		<h5>Hours Worked</h5>
-	</div>
+	<!-- portfolio -->
+	<section id="portfolio">
+		<div class="title wow fadeInDown">
+			<span>My Works</span>
+		</div>
 
-	<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
-		<i class="fa fa-code"></i>
-		<h4><span class="count-num">50126</span></h4>
-		<h5>Lines of Code</h5>
-	</div>
+		<div class="portfolio-section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="portfolio-box p-box-1">
+							<h5>LOL APP</h5>
+							<p>This is a simple app where you can tweet a funny jokes or read jokes tweeted by others
+								when you are having a boring time.</p>
+							<div class="p-box-img">
+								<img src="images/lol.PNG" alt="Not Available!">
+							</div>
+							<div class="p-box-button">
+								<a href="http://manishacharya.pythonanywhere.com/" target="_blank"><button type="button"
+										class="btn btn-primary">Visit</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="portfolio-box p-box-2">
+							<h5>PERIODIC TABLE</h5>
+							<p>This app contains the list of all the discovered elements in the universe. It provides
+								you decription of each elements.</p>
+							<div class="p-box-img">
+								<img src="images/pt.PNG" alt="Not Available!">
+							</div>
+							<div class="p-box-button">
+								<a href="http://ptmanish.pythonanywhere.com/" target="_blank"><button type="button"
+										class="btn btn-primary">Visit</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="portfolio-box p-box-3">
+							<h5>PHYPRO APP</h5>
+							<p>In this app you can post your questions and doubts on physics and get answer for it and
+								also answer other friends out there.</p>
+							<div class="p-box-img">
+								<img src="images/phypro.png" alt="Not Available!">
+							</div>
+							<div class="p-box-button">
+								<a href="http://phypro.pythonanywhere.com/" target="_blank"><button type="button"
+										class="btn btn-primary">Visit</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12">
+						<div class="portfolio-box p-box-4">
+							<h5>TODO APP</h5>
+							<p>This is a simple designed list all of your todo's and help you have a better day by
+								completing all the listed tasks.</p>
+							<div class="p-box-img">
+								<img src="images/todo.png" alt="Not Available!">
+							</div>
+							<div class="p-box-button">
+								<a href="https://todo-manish.herokuapp.com/" target="_blank"><button type="button"
+										class="btn btn-primary">Visit</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- portfolio ends -->
 
-	<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
-		<i class="fa fa-user"></i>
-		<h4><span class="count-num">35</span></h4>
-		<h5>Happy Customer</h5>
-	</div>
+	<!-- articles -->
+	<a name="articles">
+		<div class="title wow fadeInDown">
+			<span>Articles</span>
+		</div>
 
-	<div class="counter-box col-sm-3 col-lg-3 col-md-6 col-xs-6">
-		<i class="fa fa-coffee"></i>
-		<h4><span class="count-num">667</span></h4>
-		<h5>Cups of Coffee</h5>
-	</div>
-</div>
-<!-- counter ends -->
-
-<!-- portfolio -->
-<section id="portfolio">
-	<div class="title wow fadeInDown">
-		<span>My Works</span>
-	</div>
-
-	<div class="portfolio-section">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<div class="portfolio-box p-box-1"><h5>LOL APP</h5>
-					<p>This is a simple app where you can tweet a funny jokes or read jokes tweeted by others when you are having a boring time.</p>
-				<div class="p-box-img">
-					<img src="images/lol.PNG" alt="Not Available!">
-				</div>
-				<div class="p-box-button">
-					<a href="http://manishacharya.pythonanywhere.com/" target="_blank"><button type="button" class="btn btn-primary">Visit</button></a> 
-				</div>
-			</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<div class="portfolio-box p-box-2"><h5>PERIODIC TABLE</h5>
-						<p>This app contains the list of all the discovered elements in the universe. It provides you decription of each elements.</p>
-						<div class="p-box-img">
-							<img src="images/pt.PNG" alt="Not Available!">
-						</div>
-						<div class="p-box-button">
-							<a href="http://ptmanish.pythonanywhere.com/" target="_blank"><button type="button" class="btn btn-primary">Visit</button></a> 
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<div class="portfolio-box p-box-3">	<h5>PHYPRO APP</h5>				
-						<p>In this app you can post your questions and doubts on physics and get answer for it and also answer other friends out there.</p>
-						<div class="p-box-img">
-							<img src="images/phypro.png" alt="Not Available!">
-						</div>
-						<div class="p-box-button">
-							<a href="http://phypro.pythonanywhere.com/" target="_blank"><button type="button" class="btn btn-primary">Visit</button></a> 
-						</div></div>
-				</div>
-				<div class="col-lg-3 col-md-6 col-sm-12">
-					<div class="portfolio-box p-box-4">	<h5>TODO APP</h5>				
-						<p>This is a simple designed list all of your todo's and help you have a better day by completing all the listed tasks.</p>
-						<div class="p-box-img">
-							<img src="images/todo.png" alt="Not Available!">
-						</div>
-						<div class="p-box-button">
-							<a href="https://todo-manish.herokuapp.com/" target="_blank"><button type="button" class="btn btn-primary">Visit</button></a> 
-						</div></div>
+				<div class="articles-section">
+					<p>You can read my latest articles from here.</p>
+					<a href="http://article-manish.herokuapp.com/" target="_blank"><button type="button"
+							class="btn btn-primary">Explore</button></a>
+
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<!-- portfolio ends -->
-
-<!-- articles -->
-<a name="articles">
-	<div class="title wow fadeInDown">
-		<span>Articles</span>
-	</div>
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="articles-section">
-				<p>You can read my latest articles from here.</p>
-				<a href="http://manishacharya.pythonanywhere.com/" target="_blank"><button type="button" class="btn btn-primary">Explore</button></a> 
-
-			</div>
-		</div>
-	</div>
 	</a>
 
-<!-- contact -->
-<a name="contact">
-	<div class="title wow fadeInDown">
-		<span>Contact</span>
-	</div>
-
-	<div class="contact-section">
-		<div class="c-box wow fadeInDown" data-wow-delay="0.2s">
-			<i class="fa fa-home"></i>
-
-			<h5>LOCATION</h5>
-			<p>Banasthali, Kathmandu</p>
+	<!-- contact -->
+	<a name="contact">
+		<div class="title wow fadeInDown">
+			<span>Contact</span>
 		</div>
 
-		<div class="c-box c-middle wow fadeInDown" data-wow-delay="0.4s">
-			<i class="fa fa-phone"></i>
+		<div class="contact-section">
+			<div class="c-box wow fadeInDown" data-wow-delay="0.2s">
+				<i class="fa fa-home"></i>
 
-			<h5>PHONE</h5>
-			<p>9810129716</p>
-		</div>
-
-		<div class="c-box c-middle wow fadeInDown" data-wow-delay="0.6s">
-			<i class="fa fa-envelope-o"></i>
-
-			<h5>EMAIL</h5>
-			<p>manish.lp3000@gmail.com</p>
-		</div>
-
-		<div class="c-box c-last wow fadeInDown" data-wow-delay="0.8s">
-			<i class="fa fa-gg"></i>
-
-			<h5>SOCIAL MEDIA</h5>
-			<ul>
-				<li><a href="https://www.facebook.com/profile.php?id=100008558807060&ref=bookmarks" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="https://www.instagram.com/haha_manish/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-				<li><a href="https://www.youtube.com/channel/UCitdobGFoL77P9EFNuEzQZw/featured?view_as=subscriber" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
-				<li><a href="https://twitter.com/Manishpro123" target="_blank"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="https://github.com/java-ish" target="_blank"><i class="fa fa-github"></i></a></li>
-			</ul>
-		</div>
-
-	</div>
-</a>
-<!-- contact ends -->
-
-<!-- send message -->
-<div class="send-message wow fadeInUp" data-wow-delay="0.4s">
-	<div class="form m-auto">
-		<form action="https://formspree.io/xgewdnaw" method="POST">
-
-			<div class="form-group">
-				<span class="error" id="username-error" ></span>
-				<span class="error" id="name-error" ></span>
-				<input type="text" name="name" id="username" required="">
-				<label>Your Name</label>
+				<h5>LOCATION</h5>
+				<p>Banasthali, Kathmandu</p>
 			</div>
 
-			<div class="form-group">
-				<span class="error" id="email-error" ></span>
-				<input type="text" name="email" id="email" required="">
-				<label>Your email</label>
+			<div class="c-box c-middle wow fadeInDown" data-wow-delay="0.4s">
+				<i class="fa fa-phone"></i>
+
+				<h5>PHONE</h5>
+				<p>9810129716</p>
 			</div>
 
-			<textarea name="message" placeholder="Your Message*" required=""></textarea>
+			<div class="c-box c-middle wow fadeInDown" data-wow-delay="0.6s">
+				<i class="fa fa-envelope-o"></i>
 
-			<button type="submit" class="submit">Send Message</button>
-		</form>
+				<h5>EMAIL</h5>
+				<p>manish.lp3000@gmail.com</p>
+			</div>
+
+			<div class="c-box c-last wow fadeInDown" data-wow-delay="0.8s">
+				<i class="fa fa-gg"></i>
+
+				<h5>SOCIAL MEDIA</h5>
+				<ul>
+					<li><a href="https://www.facebook.com/profile.php?id=100008558807060&ref=bookmarks"
+							target="_blank"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="https://www.instagram.com/haha_manish/" target="_blank"><i
+								class="fa fa-instagram"></i></a></li>
+					<li><a href="https://www.youtube.com/channel/UCitdobGFoL77P9EFNuEzQZw/featured?view_as=subscriber"
+							target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+					<li><a href="https://twitter.com/Manishpro123" target="_blank"><i class="fa fa-twitter"></i></a>
+					</li>
+					<li><a href="https://github.com/java-ish" target="_blank"><i class="fa fa-github"></i></a></li>
+				</ul>
+			</div>
+
+		</div>
+	</a>
+	<!-- contact ends -->
+
+	<!-- send message -->
+	<div class="send-message wow fadeInUp" data-wow-delay="0.4s">
+		<div class="form m-auto">
+			<form action="https://formspree.io/xgewdnaw" method="POST">
+
+				<div class="form-group">
+					<span class="error" id="username-error"></span>
+					<span class="error" id="name-error"></span>
+					<input type="text" name="name" id="username" required="">
+					<label>Your Name</label>
+				</div>
+
+				<div class="form-group">
+					<span class="error" id="email-error"></span>
+					<input type="text" name="email" id="email" required="">
+					<label>Your email</label>
+				</div>
+
+				<textarea name="message" placeholder="Your Message*" required=""></textarea>
+
+				<button type="submit" class="submit">Send Message</button>
+			</form>
+		</div>
 	</div>
-</div>
-<!-- send message ends -->
+	<!-- send message ends -->
 
-<!-- footer -->
-<div class="container-fluid footer mt-5 col-sm-12">		
-	<p align="center">&copy;All right reserved by <span><a href="#">Manish</a></span></p>
-</div>
-<!-- footer ends -->
+	<!-- footer -->
+	<div class="container-fluid footer mt-5 col-sm-12">
+		<p align="center">&copy;All right reserved by <span><a href="#">Manish</a></span></p>
+	</div>
+	<!-- footer ends -->
 
-<!-- loader -->
-<div class="loader-container">
-	<span class="loader"><span class="loader-inner"></span/></span>
-</div>
-<!-- loader ends -->
+	<script type="text/javascript" src="js/particles.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 
-<script type="text/javascript" src="js/particles.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-
-<!-- sticky bar -->
-<script type="text/javascript">
-	$(window).on('scroll', function(){
-		if ($(window).scrollTop()) {
-			$('.nav-bar').addClass('onplay');
-		}
-		else{
-			$('.nav-bar').removeClass('onplay');
-		}
-	})
-</script>
-<!-- sticky bar ends -->
-
-<!-- typing text animation -->
-<script type="text/javascript" src="js/custom.js"></script>
-<script>
-	var typed = new Typed(".text", {
-		strings: ["Student",
-		"Web designer",
-		"Programmer",
-		"Xavierian"],
-		typeSpeed: 60,
-		backSpeed: 60,
-		loop: true
-	});
-</script>
-</div>
-<!-- typing text animation ends -->
-
-<!-- automatic progress bar -->
-<script type="text/javascript" src="js/custom.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-<script type="text/javascript">
-	$('.html').rProgressbar({
-		percentage: 99,
-		fillBackgroundColor: '#283593',
-		backgroundColor: '#cacccf',
-		borderRadius: '0px',
-		height: '7px',
-		width: '100%'
-	});
-
-	$('.css').rProgressbar({
-		percentage: 90,
-		fillBackgroundColor: '#283593',
-		backgroundColor: '#cacccf',
-		borderRadius: '0px',
-		height: '7px',
-		width: '100%'
-	});
-
-	$('.js').rProgressbar({
-		percentage: 58,
-		fillBackgroundColor: '#283593',
-		backgroundColor: '#cacccf',
-		borderRadius: '0px',
-		height: '7px',
-		width: '100%'
-	});
-
-	$('.java').rProgressbar({
-		percentage: 80,
-		fillBackgroundColor: '#283593',
-		backgroundColor: '#cacccf',
-		borderRadius: '0px',
-		height: '7px',
-		width: '100%'
-	});
-</script>
-
-<!-- automatic progress bar ends -->
-
-<!-- owl carousel one -->
-<script>
-	$(document).ready(function() {
-		$('.owl-one').owlCarousel({
-			loop: true,
-			autoplay:true,
-			margin: 10,
-			responsiveClass: true,
-			responsive: {
-				0: {
-					items: 1,
-					nav: false
-				},
-				600: {
-					items: 2,
-					nav: false
-				},
-				1000: {
-					items: 3,
-					nav:false,
-					loop: true,
-					dots: true,
-					dotsEach: true,
-					margin: 20
-				}
+	<!-- sticky bar -->
+	<script type="text/javascript">
+		$(window).on('scroll', function () {
+			if ($(window).scrollTop()) {
+				$('.nav-bar').addClass('onplay');
+			}
+			else {
+				$('.nav-bar').removeClass('onplay');
 			}
 		})
-	})
-</script>
+	</script>
+	<!-- sticky bar ends -->
 
-<!-- owl carousel ends-->
-
-<!-- owl carousel two -->
-<script>
-	$(document).ready(function() {
-		$('.owl-two').owlCarousel({
-			loop: true,
-			autoplay:true,
-			margin: 10,
-			responsiveClass: true,
-			responsive: {
-				0: {
-					items: 1,
-					nav: false
-				},
-				600: {
-					items: 1,
-					nav: false
-				},
-
-				1000: {
-					items: 1,
-					nav:false,
-					loop: true,
-					dots: true,
-					dotsEach: true,
-					margin: 20
-				}
-			}
-		})
-	})
-</script>
-
-<!-- owl carousel ends-->
-
-<!-- counter -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('.count-num').rCounter();
-	});
-
-	$(function(){
-		$('.count-num').rCounter({
-			duration: 30
+	<!-- typing text animation -->
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script>
+		var typed = new Typed(".text", {
+			strings: ["Student",
+				"Web designer",
+				"Programmer",
+				"Xavierian"],
+			typeSpeed: 60,
+			backSpeed: 60,
+			loop: true
 		});
-	});
-</script>
-<!-- counter ends -->
+	</script>
+	</div>
+	<!-- typing text animation ends -->
 
-<!-- scroll to top -->
-<script>            
-	jQuery(document).ready(function() {
-		var duration = 500;
-		jQuery(window).scroll(function() {
-			if (jQuery(this).scrollTop() > 200) {
-				jQuery('.to-top').fadeIn(duration);
-			} else {
-				jQuery('.to-top').fadeOut(duration);
-			}
+	<!-- automatic progress bar -->
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+	<script type="text/javascript">
+		$('.html').rProgressbar({
+			percentage: 99,
+			fillBackgroundColor: '#283593',
+			backgroundColor: '#cacccf',
+			borderRadius: '0px',
+			height: '7px',
+			width: '100%'
 		});
 
-		jQuery('.to-top').click(function(event) {
-			event.preventDefault();
-			jQuery('html').animate({scrollTop: 0}, duration);
-			return false;
-		})
-	});
-</script>
-<!-- scroll to top ends -->
+		$('.css').rProgressbar({
+			percentage: 90,
+			fillBackgroundColor: '#283593',
+			backgroundColor: '#cacccf',
+			borderRadius: '0px',
+			height: '7px',
+			width: '100%'
+		});
 
-<!-- responsive navbar -->
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.menutoggle').click(function(){
-			$('.menutoggle').toggleClass('nav-active');
-			$('.menu').toggleClass('nav-active');
+		$('.js').rProgressbar({
+			percentage: 58,
+			fillBackgroundColor: '#283593',
+			backgroundColor: '#cacccf',
+			borderRadius: '0px',
+			height: '7px',
+			width: '100%'
+		});
+
+		$('.java').rProgressbar({
+			percentage: 80,
+			fillBackgroundColor: '#283593',
+			backgroundColor: '#cacccf',
+			borderRadius: '0px',
+			height: '7px',
+			width: '100%'
+		});
+	</script>
+
+	<!-- automatic progress bar ends -->
+
+	<!-- owl carousel one -->
+	<script>
+		$(document).ready(function () {
+			$('.owl-one').owlCarousel({
+				loop: true,
+				autoplay: true,
+				margin: 10,
+				responsiveClass: true,
+				responsive: {
+					0: {
+						items: 1,
+						nav: false
+					},
+					600: {
+						items: 2,
+						nav: false
+					},
+					1000: {
+						items: 3,
+						nav: false,
+						loop: true,
+						dots: true,
+						dotsEach: true,
+						margin: 20
+					}
+				}
+			})
 		})
-	})
-</script>
-<!-- responsive navbar ends -->
+	</script>
+
+	<!-- owl carousel ends-->
+
+	<!-- owl carousel two -->
+	<script>
+		$(document).ready(function () {
+			$('.owl-two').owlCarousel({
+				loop: true,
+				autoplay: true,
+				margin: 10,
+				responsiveClass: true,
+				responsive: {
+					0: {
+						items: 1,
+						nav: false
+					},
+					600: {
+						items: 1,
+						nav: false
+					},
+
+					1000: {
+						items: 1,
+						nav: false,
+						loop: true,
+						dots: true,
+						dotsEach: true,
+						margin: 20
+					}
+				}
+			})
+		})
+	</script>
+
+	<!-- owl carousel ends-->
+
+	<!-- counter -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('.count-num').rCounter();
+		});
+
+		$(function () {
+			$('.count-num').rCounter({
+				duration: 30
+			});
+		});
+	</script>
+	<!-- counter ends -->
+
+	<!-- scroll to top -->
+	<script>
+		jQuery(document).ready(function () {
+			var duration = 500;
+			jQuery(window).scroll(function () {
+				if (jQuery(this).scrollTop() > 200) {
+					jQuery('.to-top').fadeIn(duration);
+				} else {
+					jQuery('.to-top').fadeOut(duration);
+				}
+			});
+
+			jQuery('.to-top').click(function (event) {
+				event.preventDefault();
+				jQuery('html').animate({ scrollTop: 0 }, duration);
+				return false;
+			})
+		});
+	</script>
+	<!-- scroll to top ends -->
+
+	<!-- responsive navbar -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.menutoggle').click(function () {
+				$('.menutoggle').toggleClass('nav-active');
+				$('.menu').toggleClass('nav-active');
+			})
+		})
+	</script>
+	<!-- responsive navbar ends -->
+
+	<!-- loader -->
+	<script>
+
+		setTimeout(function() {
+			$("#loader").addClass("loader-hidden");
+		   }, 2000);
+	</script>
 </body>
+
 </html>
